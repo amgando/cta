@@ -40,12 +40,6 @@ class OrangeTree
 
 end
 
-#Run this code. It should all work, except for when we call "tree.age!"
-
-#Read the error. Why is "age" nil? In the "age!" method, change "age" to "@age" or "self.age". Why does it work now?
-
-#Why does referencing "age" work inside the "alive?" method, but not the "age!" method?
-
 tree = OrangeTree.new({age: 6})
 
 3.times { tree.grow_fruit! }
