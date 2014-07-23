@@ -38,7 +38,7 @@ def print_results(index, cat, price)
   puts "and limited to prices ranging from #{price.first} to #{price.last}"
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "

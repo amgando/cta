@@ -8,11 +8,12 @@
 def insertion_sort(a)
 
   # for i = 2:n,
-  (2..a.length).each do |i|
+  (0..a.length).each do |i|
     k = i
     # for (k = i; k > 1 and a[k] < a[k-1]; k--)
-    while k > 1 && a[k] < a[k-1]
+    while k > 0 && a[k] < a[k-1]
       # swap a[k,k-1]
+      p a
       a[k], a[k-1] = a[k-1], a[k]
       k -= 1
     end
