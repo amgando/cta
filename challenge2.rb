@@ -19,11 +19,11 @@ class OrangeTree
   end
 
   def alive?
-    age < max_age
+    @age < max_age
   end
 
   def age!
-    age += 1
+    @age += 1
   end
 
   def grow_fruit!
