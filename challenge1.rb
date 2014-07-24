@@ -38,13 +38,13 @@ def print_results(index, cat, price)
   puts "and limited to prices ranging from #{price.first} to #{price.last}"
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "
-  gets.chomp =~ /y/i
+  input = gets.chomp
+  if input =~ /y/i
 end
-
 
 # ----
 
@@ -79,5 +79,5 @@ puts "search confirmation. here's what we captured: "
 puts "-"*45
 
 searches.each_with_index do |search, idx|
-  print_results(idx+1, *search)
+  print_results(idx+1, search)
 end

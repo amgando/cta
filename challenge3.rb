@@ -10,11 +10,16 @@
 #     → invariant: a[1..i] is sorted
 # end
 
+# if the
+
 def insertion_sort(a)
   (2...a.length).each do |i|
     k = i
+    #element > 1 AND index a
     while k > 1 && a[k] < a[k-1]
+
       a[k], a[k-1] = a[k-1], a[k]
+
       k -= 1
     end
   end
