@@ -10,15 +10,16 @@
 #     → invariant: a[1..i] is sorted
 # end
 
-def insertion_sort(a)
-  (2...a.length).each do |i|
-    k = i
-    while k > 1 && a[k] < a[k-1]
-      a[k], a[k-1] = a[k-1], a[k]
-      k -= 1
+def insertion_sort(array)
+  (2...array.length).each do |index|
+    memo = index
+    while memo > 1 && array[memo] < array[memo-1]
+      # swap elements wh
+      array[memo], array[memo-1] = array[memo-1], array[memo]
+      memo -= 1
     end
   end
-  a
+  array
 end
 
 # -----------------------------
@@ -28,3 +29,7 @@ end
   print "%-50s" % [insertion_sort(data)]
   puts insertion_sort(data) == data.sort  # test against internal sort
 end
+
+data = (1..9).to_a.reverse
+print "%-50s" % [insertion_sort(data)]
+puts insertion_sort(data) == data.sort
