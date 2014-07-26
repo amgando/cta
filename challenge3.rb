@@ -1,3 +1,4 @@
+require 'pry'
 # this program has an intermittent bug.
 # sometimes the tests pass, sometimes they fail.
 # make whatever changes you want to make all the tests pass
@@ -11,9 +12,10 @@
 # end
 
 def insertion_sort(a)
-  (2...a.length).each do |i|
+  (1...a.length).each do |i|
+    # binding.pry
     k = i
-    while k > 1 && a[k] < a[k-1]
+    while k >= 1 && a[k] < a[k-1]
       a[k], a[k-1] = a[k-1], a[k]
       k -= 1
     end

@@ -1,3 +1,4 @@
+require 'pry'
 class Orange
   attr_reader :circumference
 
@@ -23,7 +24,7 @@ class OrangeTree
   end
 
   def age!
-    age += 1
+    @age += 1
   end
 
   def grow_fruit!
