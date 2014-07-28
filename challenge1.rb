@@ -19,25 +19,6 @@ def ask_for_description
   gets.chomp
 end
 
-def ask_for_price_range
-  puts
-  puts "what price limits should we set?"
-  print "type in a lower limit in dollars (or blank for no limit): "
-  low = gets.chomp
-  low = low.length.zero? ? -1 : low
-  print "type in an upper limit in dollars (or blank for no limit): "
-  high = gets.chomp
-  high = high.length.zero? ? -1 : high
-end
-
-def print_results(index, cat, price)
-  puts
-  puts "search number #{index}"
-  puts "you asked us to search for [#{cat}]"
-  puts "matching keywords [#{desc}]"
-  puts "and limited to prices ranging from #{price.first} to #{price.last}"
-end
-
 def saerch_again?
   puts
   puts "would you like to search for something else?"
@@ -67,9 +48,8 @@ searches = []
 while true
   category = ask_for_category
   description = ask_for_description
-  price = ask_for_price_range
 
-  searches << [category, description, price]
+  searches << [category, description]
 
   break unless search_again?
 end
@@ -78,6 +58,4 @@ puts
 puts "search confirmation. here's what we captured: "
 puts "-"*45
 
-searches.each_with_index do |search, idx|
-  print_results(idx+1, *search)
-end
+p searches
