@@ -19,7 +19,7 @@ def ask_for_description
   gets.chomp
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "
@@ -40,7 +40,7 @@ puts "we do all the work of finding stuff you want"
 puts "first, we'll ask you a series of questions"
 puts "then, the magic happens..."
 puts
-puts "(press any key to continue)"
+puts "(press enter to continue)"
 gets
 
 searches = []

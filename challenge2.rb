@@ -23,7 +23,7 @@ class OrangeTree
   end
 
   def age!
-    age += 1
+    @age += 1
   end
 
   def grow_fruit!
@@ -31,6 +31,7 @@ class OrangeTree
   end
 
   def pick_fruit!
+    return "there aren't any fruits" if fruit.empty?
     "You picked an orange that's #{fruit.shift.circumference} inches around!"
   end
 
@@ -42,7 +43,7 @@ end
 
 tree = OrangeTree.new({age: 6})
 
-3.times { tree.grow_fruit! }
+5.times { tree.grow_fruit! }
 p tree.pick_fruit!
 p tree.alive?
 p tree.age
