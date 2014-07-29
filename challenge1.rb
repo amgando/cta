@@ -19,7 +19,7 @@ def ask_for_description
   gets.chomp
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "

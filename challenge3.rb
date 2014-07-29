@@ -28,9 +28,10 @@ def ask_for_price_range
   print "type in an upper limit in dollars (or blank for no limit): "
   high = gets.chomp
   high = high.length.zero? ? -1 : high
+  [low, high]
 end
 
-def print_results(index, cat, price)
+def print_results(index, cat, desc, price)
   puts
   puts "search number #{index}"
   puts "you asked us to search for [#{cat}]"
@@ -78,6 +79,7 @@ puts
 puts "search confirmation. here's what we captured: "
 puts "-"*45
 
+puts searches.inspect
 searches.each_with_index do |search, idx|
   print_results(idx+1, *search)
 end

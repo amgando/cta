@@ -11,13 +11,18 @@
 # end
 
 def insertion_sort(a)
+  p "before: #{a}"
   (2...a.length).each do |i|
+    puts i.inspect
     k = i
+
+    puts "#{a[k].inspect} < #{a[k-1].inspect} ? #{(a[k] < a[k-1]).inspect}"
     while k > 1 && a[k] < a[k-1]
       a[k], a[k-1] = a[k-1], a[k]
       k -= 1
     end
   end
+  p "after: #{a}"
   a
 end
 
