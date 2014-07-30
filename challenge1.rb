@@ -1,5 +1,5 @@
 # craigslist searcher, we do the searching part for you!
-
+require 'debugger'
 def ask_for_category
   puts
   puts "what category are you interested in?"
@@ -19,11 +19,14 @@ def ask_for_description
   gets.chomp
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "
-  gets.chomp =~ /y/i
+  x = gets.chomp
+  x =~ /y/i
+  # debugger
+  return x
 end
 
 
@@ -46,12 +49,17 @@ gets
 searches = []
 
 while true
+
+  if search_again?
+
   category = ask_for_category
   description = ask_for_description
 
   searches << [category, description]
+else
+  break
+end
 
-  break unless search_again?
 end
 
 puts
