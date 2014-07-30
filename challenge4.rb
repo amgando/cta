@@ -10,15 +10,21 @@
 #     → invariant: a[1..i] is sorted
 # end
 
-def insertion_sort(a)
-  (2...a.length).each do |i|
-    k = i
-    while k > 1 && a[k] < a[k-1]
-      a[k], a[k-1] = a[k-1], a[k]
-      k -= 1
+def insertion_sort(data)
+  data_length = data.length
+
+  (1...data_length).each do |index|
+    temporary_index = index
+
+    while temporary_index > 1 && data[temporary_index] < data[temporary_index - 1]
+      data[temporary_index]     = data[temporary_index - 1]
+      data[temporary_index - 1] = data[temporary_index]
+
+      temporary_index -= 1
     end
   end
-  a
+
+  data
 end
 
 # -----------------------------

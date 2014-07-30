@@ -9,6 +9,7 @@ end
 
 class OrangeTree
   attr_accessor :age, :fruit
+
   attr_reader :max_age, :fruit_bearing_age
 
   def initialize(args = {})
@@ -23,7 +24,7 @@ class OrangeTree
   end
 
   def age!
-    age += 1
+    self.age += 1
   end
 
   def grow_fruit!
