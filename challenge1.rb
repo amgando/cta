@@ -1,3 +1,4 @@
+
 # craigslist searcher, we do the searching part for you!
 
 def ask_for_category
@@ -16,7 +17,7 @@ def ask_for_description
   puts
   puts "what keywords should we be looking for?"
   print "type in a few keywords: "
-  gets.chomp
+  description = gets.chomp
 end
 
 def ask_for_price_range
@@ -24,21 +25,22 @@ def ask_for_price_range
   puts "what price limits should we set?"
   print "type in a lower limit in dollars (or blank for no limit): "
   low = gets.chomp
-  low = low.length.zero? ? -1 : low
+  price = []
+  price << low
   print "type in an upper limit in dollars (or blank for no limit): "
   high = gets.chomp
-  high = high.length.zero? ? -1 : high
+  price << high
 end
 
-def print_results(index, cat, price)
+def print_results(index, category, price, description)
   puts
   puts "search number #{index}"
-  puts "you asked us to search for [#{cat}]"
-  puts "matching keywords [#{desc}]"
+  puts "you asked us to search for [#{category}]"
+  puts "matching keywords [#{description}]"
   puts "and limited to prices ranging from #{price.first} to #{price.last}"
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "
