@@ -23,7 +23,7 @@ class OrangeTree
   end
 
   def age!
-    age += 1
+    self.age += 1
   end
 
   def grow_fruit!
