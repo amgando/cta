@@ -23,7 +23,7 @@ class OrangeTree
   end
 
   def age!
-    age += 1
+    @age += 1
   end
 
   def grow_fruit!
@@ -43,6 +43,7 @@ end
 tree = OrangeTree.new({age: 6})
 
 3.times { tree.grow_fruit! }
+
 p tree.pick_fruit!
 p tree.alive?
 p tree.age
