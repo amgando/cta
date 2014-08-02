@@ -34,8 +34,8 @@ def print_results(index, cat, price)
   puts
   puts "search number #{index}"
   puts "you asked us to search for [#{cat}]"
-  puts "matching keywords [#{desc}]"
-  puts "and limited to prices ranging from #{price.first} to #{price.last}"
+  puts "matching keywords [#{cat}]"
+  puts "and limited to prices ranging from #{price} to #{ }"
 end
 
 def search_again?
@@ -79,5 +79,5 @@ puts "search confirmation. here's what we captured: "
 puts "-"*45
 
 searches.each_with_index do |search, idx|
-  print_results(idx+1, *search)
+  print_results(idx+1, search, search[idx][2])
 end
