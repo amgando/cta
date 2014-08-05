@@ -19,11 +19,15 @@ def ask_for_description
   gets.chomp
 end
 
-def saerch_again?
+def search_again?
   puts
   puts "would you like to search for something else?"
   print "would you like us to search again? (y/n) "
   gets.chomp =~ /y/i
+end
+
+def valid_category?(category)
+  (1..4).to_a.include?(category.to_i)
 end
 
 
@@ -45,14 +49,19 @@ gets
 
 searches = []
 
+#### LOGIC OF SHITTY PROGRAM
+
 while true
   category = ask_for_category
+  break unless valid_category?(category)
   description = ask_for_description
 
   searches << [category, description]
 
   break unless search_again?
 end
+
+
 
 puts
 puts "search confirmation. here's what we captured: "

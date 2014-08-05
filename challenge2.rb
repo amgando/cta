@@ -18,12 +18,16 @@ class OrangeTree
     @fruit_bearing_age = args.fetch(:fruit_bearing_age, 5)
   end
 
+  def age!
+    self.age += 1
+  end
+
   def alive?
     age < max_age
   end
 
-  def age!
-    age += 1
+  def fruit_bearing?
+    age >= fruit_bearing_age
   end
 
   def grow_fruit!
@@ -32,10 +36,6 @@ class OrangeTree
 
   def pick_fruit!
     "You picked an orange that's #{fruit.shift.circumference} inches around!"
-  end
-
-  def fruit_bearing?
-    age >= fruit_bearing_age
   end
 
 end
