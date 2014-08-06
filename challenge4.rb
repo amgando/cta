@@ -11,9 +11,9 @@
 # end
 
 def insertion_sort(a)
-  (2...a.length).each do |i|
+  (1...a.length).each do |i|
     k = i
-    while k > 1 && a[k] < a[k-1]
+    while k > 0 && a[k] < a[k-1]
       a[k], a[k-1] = a[k-1], a[k]
       k -= 1
     end

@@ -13,9 +13,9 @@
 # end
 
 def selection_sort(a)
-  (1..a.length).each do |i|
+  (0...a.length-1).each do |i|
     k = i
-    (i+1..a.length).each do |j|
+    (i+0...a.length).each do |j|
       k = j if a[j] < a[k]
     end
     a[i], a[k] = a[k], a[i]
